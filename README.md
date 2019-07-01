@@ -1,16 +1,16 @@
 # project
 
-## Project setup
+## 安装
 ```
-npm install
+npm install || yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 编译运行开发环境
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 线上环境 Compiles and minifies for production
 ```
 npm run build
 ```
