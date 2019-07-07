@@ -9,7 +9,7 @@
 
 <script>
 export default {
-	name: 'Server'
+  name: 'Server'
 }
 </script>
 <style lang="less">
@@ -32,4 +32,3 @@ export default {
         }
     }
 </style>
-

@@ -6,10 +6,10 @@
 
 <script>
 export default {
-	data() {
-		return {
-			test: 'rssrs'
-		}
-	}
+  data () {
+    return {
+      test: 'rssrs'
+    }
+  }
 }
 </script>

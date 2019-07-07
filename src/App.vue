@@ -9,33 +9,38 @@
 <script>
 import Footer from './container/Footer'
 export default {
-	name: 'App',
-	components: {
-		Footer
-	},
-	data() {
-		return {
+  name: 'App',
+  components: {
+    Footer
+  },
+  data () {
+    return {
 
-		}
-		// todos: this.$store.todos
-	},
-	created() {
-		console.log('todos', this.$store.state.todos)
-	}
+    }
+    // todos: this.$store.todos
+  },
+  created () {
+    // console.log('todos', this.$store.state.todos)
+  }
 }
 </script>
 
 <style lang="less" >
+body {
+  font-size: 12px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  // margin-top: 60px;
-  font-size: 12px;
-  background: #eee;
   #registry {
-    padding: 2rem;
+    padding: 2rem 30px;
+    background: #eee;
+
+    .tips {
+      margin-bottom: 30px;
+    }
   }
 }
 </style>

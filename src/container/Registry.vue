@@ -1,47 +1,54 @@
 <template>
-  <Form
-    ref="formValidate"
-    :model="formValidate"
-    :rules="ruleValidate"
-    :label-width="100"
-    id="registry"
-  >
-    <div v-if="isLogin">
-      <FormItem label="身份证号码" prop="ID">
-        <Input v-model="formValidate.ID" placeholder="请输入身份证号码"/>
-      </FormItem>
-      <FormItem label="银行卡号" prop="bank">
-        <Input v-model="formValidate.bank" placeholder="请输入银行卡号"/>
-      </FormItem>
-    </div>
-    <div v-else>
-      <FormItem label="用户名" prop="name">
-        <Input v-model="formValidate.name" placeholder="请输入用户名"/>
-      </FormItem>
-      <FormItem label="密码" prop="password">
-        <Input v-model="formValidate.password" placeholder="请输入登录密码"/>
-      </FormItem>
+  <div id="registry">
+    <Tips />
+    <Form
+      ref="formValidate"
+      :model="formValidate"
+      :rules="ruleValidate"
+      :label-width="100"
+      
+    >
+      <div v-if="isLogin">
+        <FormItem label="身份证号码" prop="ID">
+          <Input v-model="formValidate.ID" placeholder="请输入身份证号码" />
+        </FormItem>
+        <FormItem label="银行卡号" prop="bank">
+          <Input v-model="formValidate.bank" placeholder="请输入银行卡号" />
+        </FormItem>
+      </div>
+      <div v-else>
+        <FormItem label="用户名" prop="name">
+          <Input v-model="formValidate.name" placeholder="请输入用户名" />
+        </FormItem>
+        <FormItem label="密码" prop="password">
+          <Input v-model="formValidate.password" placeholder="请输入登录密码" />
+        </FormItem>
 
-      <FormItem label="手机号码" prop="iphone">
-        <Input v-model="formValidate.iphone" placeholder="请输入手机号码"/>
-      </FormItem>
-      <FormItem label="验证码" prop="code">
-        <Input v-model="formValidate.code" placeholder="请输入验证码"/>
-      </FormItem>
-    </div>
+        <FormItem label="手机号码" prop="iphone">
+          <Input v-model="formValidate.iphone" placeholder="请输入手机号码" />
+        </FormItem>
+        <FormItem label="验证码" prop="code">
+          <Input v-model="formValidate.code" placeholder="请输入验证码" />
+        </FormItem>
+      </div>
 
-    <FormItem>
-      <Button type="primary" @click="handleSubmit('formValidate')">提交</Button>
-      <Button @click="handleReset('formValidate')" style="margin-left: 8px">取消</Button>
-    </FormItem>
-  </Form>
+      <FormItem>
+        <Button type="primary" @click="handleSubmit('formValidate')">提交</Button>
+        <Button @click="handleReset('formValidate')" style="margin-left: 8px">取消</Button>
+      </FormItem>
+    </Form>
+  </div>
 </template>
 <script>
 import axios from "axios";
+import Tips from "../components/Tips";
 export default {
+  components: {
+    Tips
+  },
   data() {
     return {
-      isLogin: false,// 是否已登录
+      isLogin: false, // 是否已登录
       formValidate: {
         name: "",
         password: "",
@@ -83,10 +90,10 @@ export default {
       this.$refs[name].validate(valid => {
         console.log("valid", valid);
         if (this.isLogin) {
-        //   this.$refs[name].validateField("ID");
-        //   this.$refs[name].validateField("band");
-		  const { ID, bank } = this.formValidate;
-		  data = {ID, bank}
+          //   this.$refs[name].validateField("ID");
+          //   this.$refs[name].validateField("band");
+          const { ID, bank } = this.formValidate;
+          data = { ID, bank };
         }
         if (valid) {
           console.log(this.formValidate);

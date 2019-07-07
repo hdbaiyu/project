@@ -8,49 +8,49 @@
 </template>
 
 <script>
-import userInfo from "../components/Users/UserInfo";
+import userInfo from '../components/Users/UserInfo'
 import Money from '../components/Users/Money'
 import Photo from '../components/Users/Photo'
 import Code from '../components/Users/Code'
-import axios from "axios";
+import axios from 'axios'
 
 export default {
-  name: "user",
+  name: 'user',
   components: {
-	userInfo,
-	Money,
-	Photo,
-	Code,
+    userInfo,
+    Money,
+    Photo,
+    Code
   },
-  created() {
+  created () {
     // this.fetchUserInfo();
-    window.location.href= 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0110a811659f876b&redirect_uri=http://baiyu.free.idcfengye.com/wx/code&response_type=code&scope=SCOPE&state=STATE#wechat_redirect'
+    // window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0110a811659f876b&redirect_uri=http://baiyu.free.idcfengye.com/wx/code&response_type=code&scope=SCOPE&state=STATE#wechat_redirect'
   },
 
-  data() {
-    return {};
+  data () {
+    return {}
   },
   methods: {
-    fetchUserInfo() {
+    fetchUserInfo () {
       axios({
-        url: "/wx/user",
-        method: "get"
+        url: '/wx/user',
+        method: 'get'
         // data
       })
         .then(res => {
-          return res.data;
+          return res.data
         })
         .then(res => {
-          console.log("rs", res.data);
-        });
+          console.log('rs', res.data)
+        })
     }
   }
-};
+}
 </script>
 
 <style lang="less">
 .Account {
-  padding: 20px;
+  // padding: 20px;
   background: #eee;
   .br {
 	  margin-top: 10px;

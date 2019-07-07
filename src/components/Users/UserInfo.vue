@@ -23,16 +23,16 @@
 </template>
 <script>
 export default {
-  name: "userInfo",
-  data() {
-      return {
-        imgsrc: "/assets/logo.png",
-      }
+  name: 'userInfo',
+  data () {
+    return {
+      imgsrc: '/assets/logo.png'
+    }
   },
-  created() {
-    console.log("imgsrc");
+  created () {
+    console.log('imgsrc')
   }
-};
+}
 </script>
 <style lang="less">
 .user-Info {
