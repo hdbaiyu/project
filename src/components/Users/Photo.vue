@@ -86,8 +86,6 @@ export default {
       this.update = item
       this.visibles = true
       this.loading = false
-
-      console.log('ssfsfs', this.visible)
     },
     handleBeforeUpload () {
       const check = this.uploadList.length < 5
