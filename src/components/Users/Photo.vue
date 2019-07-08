@@ -1,17 +1,18 @@
 <template>
     <Card class="br">
         <p slot="title">我的相册</p>
-        <Row v-for="item in data">
-            <i-col span="18" >
-                <img :src="item.imgSrc" style="width:45%" />
+        <Row v-for="item in data" class="phone-row" style="width100%" v-bind:key="item.id">
+            <i-col span="14" >
+                <img :src="item.imgSrc" style="max-width:80%;" />
             </i-col>
-            <i-col span="6">
-                <h3>{{item.desc}}</h3>
+            <i-col span="10">
+                <h4>{{item.desc}}</h4>
                 <div class="action">
-                    <i-button type="info" @click="editor(item)">编辑</i-button>
-                    <i-button type="error" @click="del(item.id)">删除图片</i-button>
+                    <i-button type="info" size="small" @click="editor(item)">编辑</i-button>
+                    <i-button type="error" size="small" @click="del(item.id)">删除</i-button>
                 </div>
             </i-col>
+          
         </Row>
         <Modal
             fullscreen
@@ -24,7 +25,7 @@
             <p>
                 <Input type="textarea" v-model="update.desc" placeholder="请输入内容"  />
                 <img :src="update.imgSrc" />
-                <div class="demo-upload-list" v-for="item in uploadList">
+                <div class="demo-upload-list" v-for="item in uploadList" v-bind:key="item.id">
                     <template v-if="item.status === 'finished'">
                         <img :src="item.url">
                         <div class="demo-upload-list-cover">
@@ -54,7 +55,7 @@
         </Modal>
 
         <div class="page">
-            <Page :total="100" show-total></Page>
+            <Page :total="10" show-total></Page>
         </div>
     </Card>
 </template>
@@ -139,6 +140,9 @@ export default {
 </script>
 <style lang="less">
     .action {
-        margin: 20px 0;
+      margin: 25px 0;
+      button {
+        margin:0 5px;
+      }
     }
 </style>

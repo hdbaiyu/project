@@ -8,14 +8,14 @@
         </div>
         <Icon type="arrow-resize"></Icon>
       </i-col>
-      <i-col span="16">
+      <i-col span="14">
         <div class="name">
             大宇
         </div>
       </i-col>
-      <i-col span="4">
+      <i-col span="6">
         <div class="">
-            <i-button type="primary" shape="circle">编辑资料</i-button>
+            <i-button size="small" type="primary" shape="circle">编辑资料</i-button>
         </div>
       </i-col>
     </Row>

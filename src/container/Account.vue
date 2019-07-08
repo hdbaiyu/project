@@ -52,13 +52,20 @@ export default {
 .Account {
   // padding: 20px;
   background: #eee;
-  .br {
+  .phone-row {
 	  margin-top: 10px;
-	  margin-bottom: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    
+  }
+  .phone-row:first-child {
+    border:0;
   }
   .page {
 	  padding: 20px;
-	  text-align: right;
+    text-align: right;
+    margin-bottom: 20px;
   }
 }
 </style>
